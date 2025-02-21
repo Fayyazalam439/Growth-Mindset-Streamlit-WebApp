@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import os
@@ -81,5 +80,4 @@ if uploaded_files:
                 mime=mime_type 
             )
 
-st.success("All files processed!")
-                
+st.success("All files processed!")                
