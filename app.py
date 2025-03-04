@@ -4,8 +4,8 @@ import os
 from io import BytesIO
 
 #Set up our app
-st.set_page_config(page_title="Data sweeper", layout='wide')
-st.title("Data sweeper")
+st.set_page_config(page_title="📀 Data sweeper", layout='wide')
+st.title("📀 Data sweeper")
 st.write("Transform your files between CSV and Excel formats with built-in data cleaning and visualization!")
 
 uploaded_files = st.file_uploader("Upload you files (CSV or Excel):", type=["csv","xlsx"], accept_multiple_files=True)
@@ -27,37 +27,37 @@ if uploaded_files:
         st.write(f"**File Size:** {file.size/1024}")
 
         #Show 5 rows of our df
-        st.write("Preview the Head of the Dataframe")
+        st.write("🔎Preview the Head of the Dataframe")
         st.dataframe(df.head())
 
         #Option for data cleaning
-        st.subheader("Data Cleaning Option")
+        st.subheader("🔧Data Cleaning Option")
         if st.checkbox(f"Clean Data for {file.name}"):
             col1, col2 = st.columns(2)
 
             with col1:
                 if st.button(f"Remove Duplicates from {file.name}"):
                     df.drop_duplicates(inplace=True)
-                    st.write("Duplicates Removed!")
+                    st.write("✅ Duplicates Removed!")
             
             with col2:
                 if st.button(f"Fill Missing Value for {file.name}"):
                     numeric_cols = df.select_dtypes(include=['number']).columns
                     df[numeric_cols] = df [numeric_cols].fillna(df[numeric_cols].mean())
-                    st.write("Missing Value have been Filled!")
+                    st.write("✅ Missing Value have been Filled!")
 
         #Choose specific columns to Keep or Convert
-        st.subheader("Select Columns to Convert")
+        st.subheader("🎯 Select Columns to Convert")
         columns = st.multiselect(f"Choose columns for {file.name}", df.columns, default=df.columns)
         df = df[columns]
 
         #Create Some Visulizations
-        st.subheader("Data Visulization")
+        st.subheader("🔗 Data Visulization")
         if st.checkbox(f"Show Visulization for{file.name}"):
             st.bar_chart(df.select_dtypes(include='number').iloc[:,:2])
 
         #Convert the File -> CSV to Excel
-        st.subheader("Conversion Options")
+        st.subheader("🔗 Conversion Options")
         Conversion_type = st.radio(f"Convert {file.name} to:", ["CSV", "Excel"], key=file.name)
         if st.button(f"convert{file.name}"):
             buffer = BytesIO()
@@ -80,4 +80,4 @@ if uploaded_files:
                 mime=mime_type 
             )
 
-st.success("All files processed!")                
+st.success("🎉 All files processed successfully!")                
