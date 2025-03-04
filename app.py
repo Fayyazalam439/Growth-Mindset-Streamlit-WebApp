@@ -59,7 +59,7 @@ if uploaded_files:
         #Convert the File -> CSV to Excel
         st.subheader("🔗 Conversion Options")
         Conversion_type = st.radio(f"Convert {file.name} to:", ["CSV", "Excel"], key=file.name)
-        if st.button(f"convert{file.name}"):
+        if st.button(f"Convert{file.name}"):
             buffer = BytesIO()
             if Conversion_type == "CSV":
                 df.to_csv(buffer,index=False)
