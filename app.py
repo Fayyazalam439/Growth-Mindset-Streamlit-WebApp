@@ -7,16 +7,49 @@ from io import BytesIO
 st.set_page_config(page_title="📀 Data sweeper", layout='wide')
 
 #custom css
+# st.markdown(
+#     """
+#     <style>
+#     .stApp{
+#         background-color: black;
+#         color: white;
+#         }
+#         </style>
+#         """,
+#         unsafe_allow_html=True
+# )
+
 st.markdown(
     """
     <style>
-    .stApp{
-        background-color: black;
-        color: white;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
+    .stApp {
+        background-color: black !important;
+        color: white !important;
+    }
+    
+    .block-container {
+        background-color: black !important;
+        color: white !important;
+    }
+
+    input, textarea {
+        background-color: black !important;
+        color: white !important;
+    }
+
+    .stButton>button {
+        background-color: black !important;
+        color: white !important;
+        border-radius: 5px;
+    }
+
+    .stDataFrame {
+        background-color: black !important;
+        color: white !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 st.title("📀 Data sweeper")
