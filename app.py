@@ -22,32 +22,27 @@ st.set_page_config(page_title="📀 Data sweeper", layout='wide')
 st.markdown(
     """
     <style>
-    /* Pure Page Background & Text Color */
-    body, .stApp {
+    .stApp {
         background-color: black !important;
         color: white !important;
     }
     
-    /* Streamlit ke Default Containers ko Target Karna */
     .block-container {
         background-color: black !important;
         color: white !important;
     }
 
-    /* Input Fields (Optional: Form fields ko dark mode dikhane ke liye) */
     input, textarea {
-        background-color: #333 !important;
+        background-color: black !important;
         color: white !important;
     }
 
-    /* Buttons */
     .stButton>button {
-        background-color: #444 !important;
+        background-color: black !important;
         color: white !important;
         border-radius: 5px;
     }
 
-    /* DataFrame Table */
     .stDataFrame {
         background-color: black !important;
         color: white !important;
