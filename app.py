@@ -11,9 +11,9 @@ st.markdown(
     """
     <style>
     body {
-        background-color: black !important;
-        color: white !important;
-        }
+        background-color: black;
+        color: white;
+        };
     </style>
     """,
         unsafe_allow_html=True
