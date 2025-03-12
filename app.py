@@ -7,16 +7,54 @@ from io import BytesIO
 st.set_page_config(page_title="📀 Data sweeper", layout='wide')
 
 #custom css
+# st.markdown(
+#     """
+#     <style>
+#     .stApp{
+#         background-color: black;
+#         color: white;
+#         }
+#         </style>
+#         """,
+#         unsafe_allow_html=True
+# )
+
 st.markdown(
     """
     <style>
-    .stApp{
-        background-color: black;
-        color: white;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
+    /* Pure Page Background & Text Color */
+    body, .stApp {
+        background-color: black !important;
+        color: white !important;
+    }
+    
+    /* Streamlit ke Default Containers ko Target Karna */
+    .block-container {
+        background-color: black !important;
+        color: white !important;
+    }
+
+    /* Input Fields (Optional: Form fields ko dark mode dikhane ke liye) */
+    input, textarea {
+        background-color: #333 !important;
+        color: white !important;
+    }
+
+    /* Buttons */
+    .stButton>button {
+        background-color: #444 !important;
+        color: white !important;
+        border-radius: 5px;
+    }
+
+    /* DataFrame Table */
+    .stDataFrame {
+        background-color: black !important;
+        color: white !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 st.title("📀 Data sweeper")
