@@ -10,12 +10,12 @@ st.set_page_config(page_title="📀 Data sweeper", layout='wide')
 st.markdown(
     """
     <style>
-    .stApp{
-        background-color: black;
-        color: white;
+    body {
+        background-color: black !important;
+        color: white !important;
         }
-        </style>
-        """,
+    </style>
+    """,
         unsafe_allow_html=True
 )
 
