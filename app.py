@@ -5,6 +5,22 @@ from io import BytesIO
 
 #Set up our app
 st.set_page_config(page_title="📀 Data sweeper", layout='wide')
+
+#custom css
+
+st.markdown(
+    """
+    <style>
+    .stApp{
+        backgroung-color: black;
+        color: white;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+)
+
+
 st.title("📀 Data sweeper")
 st.write("Transform your files between CSV and Excel formats with built-in data cleaning and visualization!")
 
@@ -80,4 +96,4 @@ if uploaded_files:
                 mime=mime_type 
             )
 
-st.success("🎉 All files processed successfully!")                
+st.success("🎉 Files processed successfully! 🎉")                
